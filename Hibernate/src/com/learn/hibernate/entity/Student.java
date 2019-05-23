@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Student")
+@Table(name="student")
 public class Student {
 
 	@Id        //Primary key
@@ -68,5 +68,12 @@ public class Student {
 	{
 		
 	}
+
+	public Student(String firstName, String lastName, String email) {
+		this.first_name = firstName;
+		this.last_name = lastName;
+		this.email = email;
+	}
+
 	
 }
