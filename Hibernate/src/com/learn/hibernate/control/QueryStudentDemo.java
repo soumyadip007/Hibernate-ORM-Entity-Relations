@@ -43,15 +43,17 @@ public class QueryStudentDemo {
 				
 				displatStudents(obj);
 				
-				//query Student : OR
-				obj=session.createQuery("from Student s where s.last_name='Chowdhury' or s.first_name='Reshmi'").list();  //S is the SQL object
+				//query Student : Like
+				obj=session.createQuery("from Student s where s.last_name like '%Chowd%'").list();  //S is the SQL object
 				
-				System.out.println("\nStudents first_name OR last_name :\n");
+				System.out.println("\nStudents last_name in like:\n");
 				
 				displatStudents(obj);
 				
+				
+				
 				//Commit transaction
-				session.getTransaction().commit();
+				session.getTransaction().commit();  
 
 				System.out.println("Done");
 				
