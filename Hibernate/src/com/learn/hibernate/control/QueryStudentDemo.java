@@ -1,5 +1,7 @@
 package com.learn.hibernate.control;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -22,17 +24,18 @@ public class QueryStudentDemo {
 			
 			try {
 				
-				//Create a Student Object
-				System.out.println("Creating new student object");
-				Student obj=new Student("Soumyadip","Chowdhury","Soumyadip.note@gmail.com");
-				
+			
 				//Start a transaction
 				session.beginTransaction();
 				
-				
-				//Save the student object
-				System.out.println("Saving the student");
-				session.save(obj);
+
+				//query student 
+				List<Student> obj=session.createQuery("from Student").list();
+			
+				for(Student temp: obj)
+				{
+					System.out.println(temp);
+				}
 				
 				//Commit transaction
 				session.getTransaction().commit();
