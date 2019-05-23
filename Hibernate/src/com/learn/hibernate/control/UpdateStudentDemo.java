@@ -38,8 +38,6 @@ public class UpdateStudentDemo {
 				
 				//Commit transaction
 
-
-				obj=session.get(Student.class,id);
 				
 				System.out.println("Updated Student\n :"+obj);
 				
