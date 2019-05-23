@@ -32,11 +32,22 @@ public class QueryStudentDemo {
 				//query student 
 				List<Student> obj=session.createQuery("from Student").list();
 			
+				System.out.println("\nAll students :\n");
 				for(Student temp: obj)
 				{
 					System.out.println(temp);
 				}
 				
+				
+				//query Student : last_name="Chowdhury"
+				obj=session.createQuery("from Student s where s.last_name='Chowdhury'").list();  //S is the SQL object
+				
+				System.out.println("\nStudents last_name=Chowdhury:\n");
+				
+				for(Student temp: obj)
+				{
+					System.out.println(temp);
+				}
 				//Commit transaction
 				session.getTransaction().commit();
 
