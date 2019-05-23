@@ -47,6 +47,20 @@ public class UpdateStudentDemo {
 				session.getTransaction().commit();  
 				System.out.println("Done");
 				
+				//Update For All
+				
+				session = ((SessionFactory) factory).getCurrentSession();
+
+				session.beginTransaction();
+				
+
+				System.out.println("Updating All Student");
+
+				session.createQuery("update Student set last_name='Chowdhury'").executeUpdate();  //S is the SQL object
+
+					session.getTransaction().commit();  
+					System.out.println("Done");
+				
 			}
 			finally {
 				factory.close();
@@ -70,5 +84,10 @@ Geting Student
 Updated Student
  :Student [id=1, first_name=Soumyadip, last_name=Chowdhury, email=Soumyadip.note@gmail.com]
 Hibernate: update student set email=?, first_name=?, last_name=? where id=?
+Done
+
+Update for all:
+Updating All Student
+Hibernate: update student set last_name='Chowdhury'
 Done
 */
