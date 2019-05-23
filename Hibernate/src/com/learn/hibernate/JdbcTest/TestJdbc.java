@@ -1,4 +1,4 @@
-package com.learn.hibernate;
+package com.learn.hibernate.JdbcTest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
