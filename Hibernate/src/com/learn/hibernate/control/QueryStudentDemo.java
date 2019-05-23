@@ -33,10 +33,7 @@ public class QueryStudentDemo {
 				List<Student> obj=session.createQuery("from Student").list();
 			
 				System.out.println("\nAll students :\n");
-				for(Student temp: obj)
-				{
-					System.out.println(temp);
-				}
+				displatStudents(obj);
 				
 				
 				//query Student : last_name="Chowdhury"
@@ -44,10 +41,9 @@ public class QueryStudentDemo {
 				
 				System.out.println("\nStudents last_name=Chowdhury:\n");
 				
-				for(Student temp: obj)
-				{
-					System.out.println(temp);
-				}
+				displatStudents(obj);
+				
+				
 				//Commit transaction
 				session.getTransaction().commit();
 
@@ -58,6 +54,14 @@ public class QueryStudentDemo {
 				factory.close();
 			}
 	
+	}
+
+	
+	private static void displatStudents(List<Student> obj) {
+		for(Student temp: obj)
+		{
+			System.out.println(temp);
+		}
 	}
 }
 	
