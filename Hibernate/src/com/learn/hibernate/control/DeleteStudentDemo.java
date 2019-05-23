@@ -36,6 +36,9 @@ public class DeleteStudentDemo {
 				
 				session.delete(obj);
 				
+				//session.createQuery("delete from Student where id=9").executeUpdate();  
+
+				
 				//Commit transaction
 
 				
