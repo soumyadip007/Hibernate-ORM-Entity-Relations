@@ -35,6 +35,14 @@ public class ReadStudentDemo {
 				System.out.println(obj);
 				session.save(obj);
 				
+				
+				//find out the student id :primary key
+				System.out.println("Saved student ID:"+obj.getId());
+				Student obj1=session.get(Student.class,obj.getId());
+				
+
+				System.out.println("Geting Id\n complete:"+obj1);
+				
 				//Commit transaction
 				session.getTransaction().commit();
 
