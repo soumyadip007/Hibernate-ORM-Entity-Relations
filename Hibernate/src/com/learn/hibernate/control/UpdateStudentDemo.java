@@ -28,38 +28,23 @@ public class UpdateStudentDemo {
 				//Start a transaction
 				session.beginTransaction();
 				
+				int id=1;
+				Student obj=session.get(Student.class,id);
+				
 
-				//query student 
-				List<Student> obj=session.createQuery("from Student").list();
-			
-				System.out.println("\nAll students :\n");
-				displatStudents(obj);
+				System.out.println("Geting Student\n :"+obj);
 				
-				
-				//query Student : last_name="Chowdhury"
-				obj=session.createQuery("from Student s where s.last_name='Chowdhury'").list();  //S is the SQL object
-				
-				System.out.println("\nStudents last_name=Chowdhury:\n");
-				
-				displatStudents(obj);
-				
-				//query Student : Like
-				obj=session.createQuery("from Student s where s.last_name like '%Chowd%'").list();  //S is the SQL object
-				
-				System.out.println("\nStudents last_name in like:\n");
-				
-				displatStudents(obj);
-				
-				//query Student : OR
-				obj=session.createQuery("from Student s where s.last_name='Chowdhury' or s.first_name='Reshmi'").list();  //S is the SQL object
-				
-				System.out.println("\nStudents first_name OR last_name :\n");
-
-				displatStudents(obj);
+				obj.setFirst_name("Soumyadip");
 				
 				//Commit transaction
-				session.getTransaction().commit();  
 
+
+				obj=session.get(Student.class,id);
+				
+				System.out.println("Updated Student\n :"+obj);
+				
+
+				session.getTransaction().commit();  
 				System.out.println("Done");
 				
 			}
@@ -78,4 +63,12 @@ public class UpdateStudentDemo {
 	}
 }
 	
-
+/*Update Single student
+Hibernate: select student0_.id as id1_0_0_, student0_.email as email2_0_0_, student0_.first_name as first_na3_0_0_, student0_.last_name as last_nam4_0_0_ from student student0_ where student0_.id=?
+Geting Student
+ :Student [id=1, first_name=Soumya, last_name=Chowdhury, email=Soumyadip.note@gmail.com]
+Updated Student
+ :Student [id=1, first_name=Soumyadip, last_name=Chowdhury, email=Soumyadip.note@gmail.com]
+Hibernate: update student set email=?, first_name=?, last_name=? where id=?
+Done
+*/
