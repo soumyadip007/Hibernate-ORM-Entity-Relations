@@ -109,7 +109,7 @@ public class Instructor {
 		this.courses = courses;
 	}
 
-	public void ad(Course obj)
+	public void add(Course obj)
 	{
 		if(courses==null)
 			courses=new ArrayList<>();
