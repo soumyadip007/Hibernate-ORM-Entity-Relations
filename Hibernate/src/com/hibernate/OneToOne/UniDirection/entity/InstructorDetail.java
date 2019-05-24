@@ -1,4 +1,4 @@
-package com.hibernate.OneToOne.UniDirection.relation.entity;
+package com.hibernate.OneToOne.UniDirection.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

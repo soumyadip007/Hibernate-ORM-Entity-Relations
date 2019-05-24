@@ -1,11 +1,11 @@
-package com.hibernate.OneToOne.UniDirection.relation.control;
+package com.hibernate.OneToOne.UniDirection.control;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.hibernate.OneToOne.UniDirection.relation.entity.Instructor;
-import com.hibernate.OneToOne.UniDirection.relation.entity.InstructorDetail;
+import com.hibernate.OneToOne.UniDirection.entity.Instructor;
+import com.hibernate.OneToOne.UniDirection.entity.InstructorDetail;
 import com.hibernate.curd.entity.Student;
 
 public class CreateRelationtDemo {
