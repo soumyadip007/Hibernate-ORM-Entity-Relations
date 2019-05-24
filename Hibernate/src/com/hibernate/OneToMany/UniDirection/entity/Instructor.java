@@ -1,5 +1,7 @@
 package com.hibernate.OneToMany.UniDirection.entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,6 +36,11 @@ public class Instructor {
 	@JoinColumn(name="instructor_detail_id")
 	private InstructorDetail instructorDetail;
 
+	@OneToMany(mappedBy="instructor",
+				cascade= {CascadeType.PERSIST ,CascadeType.MERGE, 
+						CascadeType.DETACH, CascadeType.REFRESH})  //Reffers to the instructor property to the course class
+	private List<Course> courses; 
+	
 	public Instructor(String firstname, String lastname, String email) {
 	//	super();
 		this.firstname = firstname;
@@ -92,4 +100,13 @@ public class Instructor {
 				+ ", InstructorDetail=" + instructorDetail + "]";
 	}
 
+	public List<Course> getCourses() {
+		return courses;
 	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	
+}
