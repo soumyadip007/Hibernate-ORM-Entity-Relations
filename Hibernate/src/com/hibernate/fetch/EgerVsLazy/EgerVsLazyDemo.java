@@ -54,6 +54,7 @@ public class EgerVsLazyDemo {
 				
 			}
 			finally {
+				session.close();
 				
 				factory.close();
 			}
