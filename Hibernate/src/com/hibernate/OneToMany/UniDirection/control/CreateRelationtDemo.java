@@ -16,6 +16,7 @@ public class CreateRelationtDemo {
 							configure("hibernate.cfg.xml").
 							addAnnotatedClass(Instructor.class).
 							addAnnotatedClass(InstructorDetail.class).
+							addAnnotatedClass(Course.class).
 							buildSessionFactory();
 			
 		
