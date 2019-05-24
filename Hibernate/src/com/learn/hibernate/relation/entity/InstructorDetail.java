@@ -54,6 +54,10 @@ public class InstructorDetail {
 		this.hobby = hobby;
 	}
 
+	public InstructorDetail(){
+		
+	}
+	
 	
 	@Override
 	public String toString() {
