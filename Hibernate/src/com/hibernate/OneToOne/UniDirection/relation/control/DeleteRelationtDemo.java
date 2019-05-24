@@ -1,12 +1,12 @@
-package com.learn.hibernate.relation.control;
+package com.hibernate.OneToOne.UniDirection.relation.control;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.learn.hibernate.entity.Student;
-import com.learn.hibernate.relation.entity.Instructor;
-import com.learn.hibernate.relation.entity.InstructorDetail;
+import com.hibernate.OneToOne.UniDirection.relation.entity.Instructor;
+import com.hibernate.OneToOne.UniDirection.relation.entity.InstructorDetail;
+import com.hibernate.curd.entity.Student;
 
 public class DeleteRelationtDemo {
 

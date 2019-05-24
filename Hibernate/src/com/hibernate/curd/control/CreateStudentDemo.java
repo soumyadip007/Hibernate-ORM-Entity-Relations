@@ -1,10 +1,10 @@
-package com.learn.hibernate.control;
+package com.hibernate.curd.control;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.learn.hibernate.entity.Student;
+import com.hibernate.curd.entity.Student;
 
 public class CreateStudentDemo {
 

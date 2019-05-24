@@ -1,4 +1,4 @@
-package com.learn.hibernate.entity;
+package com.hibernate.curd.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.learn.hibernate.relation.entity;
+package com.hibernate.OneToOne.UniDirection.relation.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
