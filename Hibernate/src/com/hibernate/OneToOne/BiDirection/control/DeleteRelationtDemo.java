@@ -4,10 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.hibernate.OneToOne.UniDirection.entity.Instructor;
-import com.hibernate.OneToOne.UniDirection.entity.InstructorDetail;
-import com.hibernate.curd.entity.Student;
-
+import com.hibernate.OneToOne.BiDirection.entity.*;
 public class DeleteRelationtDemo {
 
 	public static void main(String[] args) {
@@ -32,15 +29,19 @@ public class DeleteRelationtDemo {
 				
 				//Get primary Key
 				
-				int id=2;
+				int id=4;
 				
-				Instructor objj=session.get(Instructor.class,id);
+				InstructorDetail objj=session.get(InstructorDetail.class,id);
 				
 				System.out.println("Found Instructor"+objj);
 				
 				if(objj != null)
 				{
-					System.out.println("Deleting the instructor"+objj);
+					System.out.println("Deleting the instructorDetail"+objj);
+					
+
+					System.out.println("Associative insuctor"+objj.getInstructor());
+					
 					//Because we have cascadeType.all so it will delete from all DB table
 					
 					session.delete(objj);
@@ -62,29 +63,14 @@ public class DeleteRelationtDemo {
 }
 	
 
-/*May 24, 2019 1:01:39 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {5.4.2.Final}
-May 24, 2019 1:01:40 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
-INFO: HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-May 24, 2019 1:01:40 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-May 24, 2019 1:01:40 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernate]
-May 24, 2019 1:01:40 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=root, password=****}
-May 24, 2019 1:01:40 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001003: Autocommit mode: false
-May 24, 2019 1:01:40 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
-INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
-May 24, 2019 1:01:40 PM org.hibernate.dialect.Dialect <init>
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-Output:
-Hibernate: select instructor0_.id as id1_0_0_, instructor0_.email as email2_0_0_, instructor0_.first_name as first_na3_0_0_, instructor0_.instructor_detail_id as instruct5_0_0_, instructor0_.last_name as last_nam4_0_0_, instructor1_.id as id1_1_1_, instructor1_.hobby as hobby2_1_1_, instructor1_.youtube_channel as youtube_3_1_1_ from instructor instructor0_ left outer join instructor_detail instructor1_ on instructor0_.instructor_detail_id=instructor1_.id where instructor0_.id=?
-Found InstructorInstructor [id=2, firstname=Soumyadip, lastname=Chowdhury, email=Soumyadip.note@gmail.com, InstructorDetail=InstructorDetail [id=5, youtube_channel=https://github.com/soumyadip007, hobby=Coding]]
-Deleting the instructorInstructor [id=2, firstname=Soumyadip, lastname=Chowdhury, email=Soumyadip.note@gmail.com, InstructorDetail=InstructorDetail [id=5, youtube_channel=https://github.com/soumyadip007, hobby=Coding]]
+/*
+Hibernate: select instructor0_.id as id1_1_0_, instructor0_.hobby as hobby2_1_0_, instructor0_.youtube_channel as youtube_3_1_0_, instructor1_.id as id1_0_1_, instructor1_.email as email2_0_1_, instructor1_.first_name as first_na3_0_1_, instructor1_.instructor_detail_id as instruct5_0_1_, instructor1_.last_name as last_nam4_0_1_ from instructor_detail instructor0_ left outer join instructor instructor1_ on instructor0_.id=instructor1_.instructor_detail_id where instructor0_.id=?
+Found InstructorInstructorDetail [id=4, youtube_channel=https://github.com/soumyadip007, hobby=Coding]
+Deleting the instructorDetailInstructorDetail [id=4, youtube_channel=https://github.com/soumyadip007, hobby=Coding]
+Associative insuctorInstructor [id=1, firstname=Soumyadip, lastname=Chowdhury, email=Soumyadip.note@gmail.com, InstructorDetail=InstructorDetail [id=4, youtube_channel=https://github.com/soumyadip007, hobby=Coding]]
 Hibernate: delete from instructor where id=?
 Hibernate: delete from instructor_detail where id=?
 Done
-May 24, 2019 1:01:41 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+May 24, 2019 2:04:21 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/hibernate]
 */

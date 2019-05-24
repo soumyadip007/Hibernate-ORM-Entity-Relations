@@ -32,7 +32,7 @@ public class DeleteRelationtDemo {
 				
 				//Get primary Key
 				
-				int id=2;
+				int id=3;
 				
 				Instructor objj=session.get(Instructor.class,id);
 				

@@ -28,7 +28,7 @@ public class InstructorDetail {
 	
 	//Add new field for instructor Class (also Getter & Setter)
 	
-	@OneToOne(mappedBy="instuctor_Detail", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL)
 	private Instructor instructor; 
 
 	
