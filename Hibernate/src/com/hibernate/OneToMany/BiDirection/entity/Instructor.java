@@ -1,4 +1,4 @@
-package com.hibernate.OneToMany.UniDirection.entity;
+package com.hibernate.OneToMany.BiDirection.entity;
 
 import java.util.ArrayList;
 import java.util.List;

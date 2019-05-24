@@ -1,4 +1,4 @@
-package com.hibernate.OneToMany.UniDirection.control;
+package com.hibernate.OneToMany.BiDirection.control;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

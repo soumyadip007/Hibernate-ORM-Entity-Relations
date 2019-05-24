@@ -1,10 +1,10 @@
-package com.hibernate.OneToMany.UniDirection.control;
+package com.hibernate.OneToMany.BiDirection.control;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.hibernate.OneToMany.UniDirection.entity.*;
+import com.hibernate.OneToMany.BiDirection.entity.*;
 import com.hibernate.curd.entity.Student;
 
 public class GetInstructorDetailsDemo {

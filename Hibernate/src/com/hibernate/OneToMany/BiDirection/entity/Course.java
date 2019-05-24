@@ -1,4 +1,4 @@
-package com.hibernate.OneToMany.UniDirection.entity;
+package com.hibernate.OneToMany.BiDirection.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
