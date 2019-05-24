@@ -31,7 +31,7 @@ public class Instructor {
 	
 	@OneToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="instructor_detail")
-	private InstructorDetail obj;
+	private InstructorDetail instructorDetail;
 
 	public Instructor(String firstname, String lastname, String email) {
 	//	super();
@@ -73,11 +73,11 @@ public class Instructor {
 	}
 
 	public InstructorDetail getObj() {
-		return obj;
+		return instructorDetail;
 	}
 
-	public void setObj(InstructorDetail obj) {
-		this.obj = obj;
+	public void setInstructorDetail(InstructorDetail obj) {
+		this.instructorDetail = obj;
 	}
 	
 	
@@ -85,7 +85,7 @@ public class Instructor {
 	@Override
 	public String toString() {
 		return "Instructor [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", obj=" + obj + "]";
+				+ ", InstructorDetail=" + instructorDetail + "]";
 	}
 
-}
+	}
