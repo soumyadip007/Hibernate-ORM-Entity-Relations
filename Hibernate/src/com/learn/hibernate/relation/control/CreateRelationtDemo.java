@@ -29,7 +29,7 @@ public class CreateRelationtDemo {
 				System.out.println("Creating new student object");
 				Instructor obj=new Instructor("Soumyadip","Chowdhury","Soumyadip.note@gmail.com");
 				
-				InstructorDetail instructorDetail=new InstructorDetail("https://github.com/soumyadip007","Soumyadip.note@gmail.com");
+				InstructorDetail instructorDetail=new InstructorDetail("https://github.com/soumyadip007","Coding");
 				
 				
 				//Associate the objects (Object to Object relation) 
@@ -40,8 +40,9 @@ public class CreateRelationtDemo {
 				session.beginTransaction();
 				
 				
-				//Save the student object
-				System.out.println("Saving the Instructor");
+				//Save the Instructor object
+				// And also save the associate object bcs we have CascadeType.all
+				System.out.println("Saving the Instructor"+obj);
 				session.save(obj);
 				
 				//Commit transaction
