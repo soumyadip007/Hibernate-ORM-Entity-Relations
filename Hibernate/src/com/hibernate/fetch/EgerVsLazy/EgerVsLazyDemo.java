@@ -40,7 +40,12 @@ public class EgerVsLazyDemo {
 
 				System.out.println("Courses :"+obj.getCourses());				
 				
+
+				session.close();
 				
+				System.out.println("Courses :"+obj.getCourses());				
+				
+
 				
 				//Commit transaction
 				session.getTransaction().commit();
@@ -49,7 +54,6 @@ public class EgerVsLazyDemo {
 				
 			}
 			finally {
-				session.close();
 				
 				factory.close();
 			}
