@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.hibernate.OneToMany.UniDirection.entity.*;
 
-public class CreateRelationtDemo {
+public class CreateCourseDemo {
 
 	public static void main(String[] args) {
 		// Create Session Factory
