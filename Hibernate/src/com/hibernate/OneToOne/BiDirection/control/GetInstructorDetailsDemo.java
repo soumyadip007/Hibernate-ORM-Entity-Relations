@@ -8,7 +8,7 @@ import com.hibernate.OneToOne.UniDirection.entity.Instructor;
 import com.hibernate.OneToOne.UniDirection.entity.InstructorDetail;
 import com.hibernate.curd.entity.Student;
 
-public class CreateRelationtDemo {
+public class GetInstructorDetailsDemo {
 
 	public static void main(String[] args) {
 		// Create Session Factory
@@ -25,24 +25,20 @@ public class CreateRelationtDemo {
 			
 			try {
 				
-				//Create a Student Object
-				System.out.println("Creating new student object");
-				Instructor obj=new Instructor("Soumyadip","Chowdhury","Soumyadip.note@gmail.com");
-				
-				InstructorDetail instructorDetail=new InstructorDetail("https://github.com/soumyadip007","Coding");
-				
-				
-				//Associate the objects (Object to Object relation) 
-				obj.setInstructorDetail(instructorDetail);
-				
-				
 				//Start a transaction
 				session.beginTransaction();
 				
 				
-				//Save the Instructor object
+				
+				//Get Instructor Details
+				int id=4;
+				InstructorDetail obj=session.get(InstructorDetail.class,id);
+				
+			
+				
+				
 				// And also save the associate object bcs we have CascadeType.all
-				System.out.println("Saving the Instructor"+obj);
+				System.out.println("Retrived object of InstructorDetail :"+obj);
 				session.save(obj);
 				
 				//Commit transaction
