@@ -80,6 +80,10 @@ public class Instructor {
 		this.instructorDetail = obj;
 	}
 	
+	public Instructor()
+	{
+		
+	}
 	
 
 	@Override
