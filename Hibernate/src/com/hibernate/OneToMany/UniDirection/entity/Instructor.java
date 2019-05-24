@@ -1,5 +1,6 @@
 package com.hibernate.OneToMany.UniDirection.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -108,5 +109,16 @@ public class Instructor {
 		this.courses = courses;
 	}
 
+	public void ad(Course obj)
+	{
+		if(courses==null)
+			courses=new ArrayList<>();
+		
+		courses.add(obj);
+		
+		obj.setInstructor(this);
+	}
+	
+	
 	
 }
