@@ -48,6 +48,8 @@ public class GetInstructorDetailsDemo {
 				
 			}
 			finally {
+				session.close();
+				
 				factory.close();
 			}
 	
@@ -55,3 +57,9 @@ public class GetInstructorDetailsDemo {
 }
 	
 
+/*
+Output:
+Hibernate: select instructor0_.id as id1_1_0_, instructor0_.hobby as hobby2_1_0_, instructor0_.youtube_channel as youtube_3_1_0_ from instructor_detail instructor0_ where instructor0_.id=?
+Retrived object of InstructorDetail :InstructorDetail [id=4, youtube_channel=https://github.com/soumyadip007, hobby=Coding]
+Done
+*/
